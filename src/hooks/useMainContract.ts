@@ -62,6 +62,9 @@ export function useMainContract() {
     },
     sendWithdraw: async(amount: number) => {
       return mainContract?.sendWithdrawMessage(sender, toNano(amount));
+    },
+    sendDestroy: async() => {
+      return mainContract?.sendDestroyMessage(sender);
     }
   }
 }

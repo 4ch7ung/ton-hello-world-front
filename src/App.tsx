@@ -16,7 +16,8 @@ function App() {
     owner_address,
     sendIncrement,
     sendDeposit,
-    sendWithdraw
+    sendWithdraw,
+    sendDestroy
   } = useMainContract();
 
   const { connected } = useTonConnect();
@@ -87,6 +88,15 @@ function App() {
             sendWithdraw(0.05);
           }}>
             Withdraw 0.05 TON
+          </a>
+        )}
+
+        {/* make destroy */}
+        {connected && (
+          <a onClick={() => {
+            sendDestroy();
+          }}>
+            Destroy contract
           </a>
         )}
       </div>
